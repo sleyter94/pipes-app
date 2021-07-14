@@ -8,6 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BasicosComponent implements OnInit {
 
+  nombreLower: string = 'sleyter';
+  nombreUpper: string = 'SLEYTER';
+  nombreTitle: string = 'sLeYTEr SandOVAL'
+  fecha: Date = new Date();
+
   constructor() { }
 
   ngOnInit(): void {
