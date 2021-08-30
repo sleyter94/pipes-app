@@ -1,1 +1,60 @@
-<p>no-comunes works!</p>
+<div class="text-layout">
+  <h1>Pipes no tan comunes</h1>
+  <p>
+    Pipes incluidos en Angular - Usualmente en el Common Module
+  </p>
+</div>
+
+<div class="p-grid">
+  <div class="p-col p-md-6">
+    <p-fieldset legend="i18nSelect Pipe" [toggleable]="true">
+      <p>
+        Saludos {{name}}, es un placer
+        {{ gender | i18nSelect: invitationMap }}
+        a nuestro evento.
+      </p>
+      <p-button (onClick)="cambiarPersona()">
+        Cambiar Persona
+      </p-button>
+    </p-fieldset>
+  </div>
+  <div class="p-col p-md-6">
+    <p-fieldset legend="i18nPlural Pipe" [toggleable]="true">
+      <p>Actualmente {{ clientes.length | i18nPlural:clientMap}}</p>
+      <p-button (onClick)="borrarCliente()">
+        Borrar Cliente
+      </p-button>
+    </p-fieldset>
+  </div>
+  <div class="p-col p-md-6">
+    <p-fieldset legend="Slice Pipe" [toggleable]="true">
+      <b>Original</b>
+      <pre>{{clientes }}</pre>
+      <b>slice:0:2</b>
+      <pre>{{clientes | slice:0:2 }}</pre>
+      <b>slice:1:2</b>
+      <pre>{{clientes | slice:1:2 }}</pre>
+    </p-fieldset>
+  </div>
+  <div class="p-col p-md-6">
+    <p-fieldset legend="KeyValue Pipe" [toggleable]="true">
+      <ul>
+        <li *ngFor="let item of persona | keyvalue">
+          {{item.key | titlecase}}: {{item.value}}
+        </li>
+      </ul>
+    </p-fieldset>
+  </div>
+  <div class="p-col p-md-6">
+    <p-fieldset legend="Json Pipe" [toggleable]="true">
+      <pre>{{heroes | json}}</pre>
+    </p-fieldset>
+  </div>
+  <div class="p-col p-md-6">
+    <p-fieldset legend="Async Pipe" [toggleable]="true">
+      {{miObs | async}}
+      <pre *ngIf="!(valorPromesa | async)">Cargando...</pre>
+      {{valorPromesa | async}}
+    </p-fieldset>
+  </div>
+</div>

@@ -8,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrdenarComponent implements OnInit {
 
+  upper: boolean = false;
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  change(){
+    this.upper = !this.upper;
   }
 
 }

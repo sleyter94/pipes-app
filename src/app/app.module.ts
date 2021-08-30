@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { LOCALE_ID, NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { PrimeNgModule } from './prime-ng/prime-ng.module';
@@ -21,7 +22,8 @@ registerLocaleData(localeEs);
     SharedModule,
     PrimeNgModule,
     AppRouterModule,
-    VentasModule
+    VentasModule,
+    BrowserAnimationsModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'es-PE'}
